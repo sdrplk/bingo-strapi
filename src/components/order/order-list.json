@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_order_order_lists",
+  "info": {
+    "displayName": "OrderList",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "count": {
+      "type": "integer"
+    }
+  }
+}
