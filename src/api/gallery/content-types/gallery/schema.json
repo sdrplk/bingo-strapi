@@ -23,6 +23,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "gallery_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gallery-category.gallery-category",
+      "mappedBy": "gallery"
     }
   }
 }

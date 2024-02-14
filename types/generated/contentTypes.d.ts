@@ -973,6 +973,11 @@ export interface ApiGalleryGallery extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     media: Attribute.Media & Attribute.Required;
+    gallery_categories: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToMany',
+      'api::gallery-category.gallery-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1004,6 +1009,11 @@ export interface ApiGalleryCategoryGalleryCategory
   };
   attributes: {
     title: Attribute.String;
+    gallery: Attribute.Relation<
+      'api::gallery-category.gallery-category',
+      'manyToOne',
+      'api::gallery.gallery'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

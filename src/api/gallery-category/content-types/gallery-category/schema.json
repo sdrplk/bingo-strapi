@@ -13,6 +13,12 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "gallery": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::gallery.gallery",
+      "inversedBy": "gallery_categories"
     }
   }
 }
