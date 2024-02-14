@@ -55,6 +55,19 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    },
+    "top_rated": {
+      "type": "boolean",
+      "default": false
+    },
+    "best_seller": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
