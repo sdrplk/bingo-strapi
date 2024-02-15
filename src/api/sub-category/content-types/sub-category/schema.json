@@ -30,6 +30,12 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "sub_category"
     }
   }
 }

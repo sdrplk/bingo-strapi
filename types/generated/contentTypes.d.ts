@@ -1110,6 +1110,11 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
       'api::product.product'
     >;
     slug: Attribute.UID<'api::sub-category.sub-category', 'title'>;
+    tags: Attribute.Relation<
+      'api::sub-category.sub-category',
+      'oneToMany',
+      'api::tag.tag'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1147,6 +1152,11 @@ export interface ApiTagTag extends Schema.CollectionType {
       'api::product.product'
     >;
     slug: Attribute.UID<'api::tag.tag', 'tag'>;
+    sub_category: Attribute.Relation<
+      'api::tag.tag',
+      'manyToOne',
+      'api::sub-category.sub-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
