@@ -68,6 +68,18 @@
     "best_seller": {
       "type": "boolean",
       "default": false
+    },
+    "related_products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "product"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "related_products"
     }
   }
 }

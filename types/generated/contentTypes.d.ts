@@ -1118,6 +1118,16 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     top_rated: Attribute.Boolean & Attribute.DefaultTo<false>;
     best_seller: Attribute.Boolean & Attribute.DefaultTo<false>;
+    related_products: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::product.product'
+    >;
+    product: Attribute.Relation<
+      'api::product.product',
+      'manyToOne',
+      'api::product.product'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
