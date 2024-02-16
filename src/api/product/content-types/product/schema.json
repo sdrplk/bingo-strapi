@@ -48,9 +48,7 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "slug": {
       "type": "uid",
@@ -80,6 +78,9 @@
       "relation": "manyToOne",
       "target": "api::product.product",
       "inversedBy": "related_products"
+    },
+    "discount": {
+      "type": "integer"
     }
   }
 }
