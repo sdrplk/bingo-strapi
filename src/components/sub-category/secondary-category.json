@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sub_category_secondary_categories",
+  "info": {
+    "displayName": "Secondary Category",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}

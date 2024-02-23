@@ -16,15 +16,15 @@
       "type": "string",
       "required": true
     },
-    "sub_categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::sub-category.sub-category",
-      "mappedBy": "category"
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "subcategory": {
+      "displayName": "Sub Category",
+      "type": "component",
+      "repeatable": true,
+      "component": "sub-category.sub-category"
     }
   }
 }

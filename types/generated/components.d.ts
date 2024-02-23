@@ -45,12 +45,46 @@ export interface ProductProductMeta extends Schema.Component {
   };
 }
 
+export interface SubCategorySecondaryCategory extends Schema.Component {
+  collectionName: 'components_sub_category_secondary_categories';
+  info: {
+    displayName: 'Secondary Category';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    code: Attribute.String;
+    url: Attribute.Text;
+  };
+}
+
+export interface SubCategorySubCategory extends Schema.Component {
+  collectionName: 'components_sub_category_sub_categories';
+  info: {
+    displayName: 'Sub Category';
+    icon: 'link';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    code: Attribute.String;
+    sequence: Attribute.Integer;
+    secondary_category: Attribute.Component<
+      'sub-category.secondary-category',
+      true
+    >;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'order.order-list': OrderOrderList;
       'product.cart': ProductCart;
       'product.product-meta': ProductProductMeta;
+      'sub-category.secondary-category': SubCategorySecondaryCategory;
+      'sub-category.sub-category': SubCategorySubCategory;
     }
   }
 }
