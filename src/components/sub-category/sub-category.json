@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_sub_category_sub_categories",
+  "info": {
+    "displayName": "Sub Category",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "integer"
+    },
+    "secondary_category": {
+      "displayName": "Secondary Category",
+      "type": "component",
+      "repeatable": true,
+      "component": "sub-category.secondary-category"
+    }
+  }
+}

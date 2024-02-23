@@ -901,12 +901,8 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    sub_categories: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::sub-category.sub-category'
-    >;
     slug: Attribute.UID<'api::category.category', 'title'>;
+    subcategory: Attribute.Component<'sub-category.sub-category', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1128,6 +1124,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToOne',
       'api::product.product'
     >;
+    discount: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1159,11 +1156,6 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    category: Attribute.Relation<
-      'api::sub-category.sub-category',
-      'manyToOne',
-      'api::category.category'
-    >;
     products: Attribute.Relation<
       'api::sub-category.sub-category',
       'oneToMany',
